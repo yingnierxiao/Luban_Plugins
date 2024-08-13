@@ -2,7 +2,7 @@
   "profiles": {
     "json-client": {
       "commandName": "Project",
-      "commandLineArgs": "dotnet $GEN_CLIENT --conf /Users/lac_123_1234/Projects/OpenSource/Luban_Example/luban.conf -t client -c cs-simple-json -d newtonjson -e test --customTemplateDir /Users/lac_123_1234/Projects/OpenSource/Luban_Example/Tpls --validationFailAsError -x outputCodeDir=/Users/lac_123_1234/Projects/OpenSource/Luban_Example/C#/Client -x outputDataDir=/Users/lac_123_1234/Projects/OpenSource/Luban_Example/Json/Client -x tableExporter.json.compact=1 -x newtonsoft.dll=Example -x l10n.textProviderFile=/Users/lac_123_1234/Projects/OpenSource/Luban_Example/Data/Excels/I18N/LocalizeConfig.csv"
+      "commandLineArgs": "dotnet $GEN_CLIENT --conf F:\\git\\MO\\Configs\\GameConfig\\luban.conf -t client -c cs-memorypack -d memorypack --customTemplateDir F:\\git\\MO\\Configs\\Tpls -x cs-memorypack.outputCodeDir=F:\\git\\MO\\UnityProject\\Assets\\GameDll\\HotFix\\GameProto\\GameConfig -x outputDataDir=F:\\git\\MO\\UnityProject\\Assets\\GameRes\\RawData\\Configs\\bytes -x i18n.dir=I18N"
     },
     "validation": {
       "commandName": "Project",

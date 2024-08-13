@@ -10,7 +10,8 @@ public class MemoryPackDataTarget : DataTargetBase
 {
     public static readonly string I18N_DIR = EnvManager.Current.GetOption("i18n", "dir", true);
 
-    protected override string OutputFileExt => "bytes";
+    // protected override string OutputFileExt => "bytes";
+    protected override string DefaultOutputFileExt => "bytes";
 
     private readonly NewtonJsonDataTarget _json_data = new();
 

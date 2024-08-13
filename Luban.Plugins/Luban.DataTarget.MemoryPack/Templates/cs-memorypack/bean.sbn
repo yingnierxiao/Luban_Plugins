@@ -13,7 +13,7 @@ namespace Example
 {
 	{{~if __bean.comment != '' ~}}
 	/// <summary>
-	/// {{x.escape_comment}}
+	/// {{escape_comment __this.comment}}
 	/// </summary>
 	{{~end~}}
     [MemoryPackable]
