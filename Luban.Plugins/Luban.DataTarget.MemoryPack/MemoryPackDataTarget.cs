@@ -9,11 +9,10 @@ namespace Luban.DataTarget.MemoryPack;
 public class MemoryPackDataTarget : DataTargetBase
 {
     public static readonly string I18N_DIR = EnvManager.Current.GetOption("i18n", "dir", true);
-
     
     public static readonly string DataFileExt = EnvManager.Current.GetOption("memorypack", "outputFileExt", true);
     protected override string OutputFileExt => "bytes";
-
+    
     private readonly NewtonJsonDataTarget _json_data = new();
 
     public void WriteList(DefTable table, List<Record> records, ref MemoryPackWriter<ArrayBufferWriter<byte>> writer)

@@ -35,6 +35,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <None Update="nlog.xml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
         <Compile Include="..\..\Luban\src\Luban\*.cs" />
         <Compile Include="..\..\Luban\src\Luban\*\*.cs" />
     </ItemGroup>
