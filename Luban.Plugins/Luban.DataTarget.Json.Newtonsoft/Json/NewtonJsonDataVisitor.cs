@@ -15,10 +15,10 @@ public class NewtonJsonDataVisitor : JsonDataVisitor
     public const string DllOption  = "dll";
     public const string Namespace  = "namespace";
 
-    private static readonly string s_dllName = EnvManager.Current.GetOption(Newtonsoft, DllOption, true);
+    // private static readonly string s_dllName = EnvManager.Current.GetOption(Newtonsoft, DllOption, true);
     
     // @formatter:off
-    private static readonly string s_namespace = EnvManager.Current.TryGetOption(Newtonsoft, Namespace, false, out var ns ) ? ns + "." : string.Empty;
+    // private static readonly string s_namespace = EnvManager.Current.TryGetOption(Newtonsoft, Namespace, false, out var ns ) ? ns + "." : string.Empty;
     // @formatter:on
 
     public override void Accept(DMap type, Utf8JsonWriter x)
@@ -41,7 +41,7 @@ public class NewtonJsonDataVisitor : JsonDataVisitor
         {
             x.WritePropertyName(FieldNames.JsonTypeNameKey);
 
-            x.WriteStringValue($"{s_namespace}{DataUtil.GetImplTypeName(type)}, {s_dllName}");
+            // x.WriteStringValue($"{s_namespace}{DataUtil.GetImplTypeName(type)}, {s_dllName}");
         }
 
         var defFields = type.ImplType.HierarchyFields;

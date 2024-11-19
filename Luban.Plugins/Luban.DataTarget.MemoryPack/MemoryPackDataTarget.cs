@@ -10,6 +10,8 @@ public class MemoryPackDataTarget : DataTargetBase
 {
     public static readonly string I18N_DIR = EnvManager.Current.GetOption("i18n", "dir", true);
 
+    
+    public static readonly string DataFileExt = EnvManager.Current.GetOption("memorypack", "outputFileExt", true);
     protected override string OutputFileExt => "bytes";
 
     private readonly NewtonJsonDataTarget _json_data = new();
@@ -81,7 +83,8 @@ public class MemoryPackDataTarget : DataTargetBase
 
         WriteList(table, records, ref writer);
         writer.Flush();
-        return new OutputFile {File = $"{table.OutputDataFile}.{OutputFileExt}", Content = ms.WrittenSpan.ToArray(),};
+        var ext = !string.IsNullOrEmpty(DataFileExt) ? DataFileExt : OutputFileExt;
+        return new OutputFile {File = $"{table.OutputDataFile}.{ext}", Content = ms.WrittenSpan.ToArray(),};
     }
 
     private bool _IsI18N(DefTable table)
